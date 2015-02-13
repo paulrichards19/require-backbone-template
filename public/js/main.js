@@ -2,6 +2,7 @@ require.config({
     baseUrl: 'js/',
     paths: {
 
+        almond: 'lib/almond',
         jquery:         'lib/jquery-1.11.2.min',
         backbone:       'lib/backbone-min',
         underscore:     'lib/lodash.min',
@@ -16,8 +17,6 @@ require.config({
             init : function($)
             {
                 var Backbone = this.Backbone.noConflict();
-                // manually include jQuery because it is not attached to the
-                // window object
                 Backbone.$ = $;
                 return Backbone;
             }
@@ -29,11 +28,7 @@ require.config({
                 return this._.noConflict();
             }
         }
-    }
+    },
+    deps: ['app/App']
 
-});
-
-require(["domReady!", "jquery",'backbone','underscore'], function(document, $)
-{
-    console.log('ready');
 });

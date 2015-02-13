@@ -1,4 +1,4 @@
-//var io = require('socket.io').listen(3001);
+
 var app = require('express')(),
     server = require('http').createServer(app),
     fs = require('fs');
@@ -12,7 +12,7 @@ app.get("*", function (request, response) {
     fs.exists(__dirname + '/public' + request.url, function (exists) {
         if (exists) {
             // return the file found
-            response.sendfile(__dirname + '/public' + request.url);
+            response.sendFile(__dirname + '/public' + request.url);
         }else{
             // cant find the file
             response.end("404!");
