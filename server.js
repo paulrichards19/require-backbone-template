@@ -16,9 +16,9 @@ app.get("*", function (request, response) {
         }else{
             // cant find the file
             response.end("404!");
-            if(program.debug){
-                console.log("404 - " + __dirname + '/public' + request.url );
-            }
+
+            console.log("404 - " + __dirname + '/public' + request.url );
+
         }
     });
 });
