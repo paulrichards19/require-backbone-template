@@ -7,7 +7,9 @@ require.config({
         backbone:       'lib/backbone-min',
         underscore:     'lib/lodash.min',
         domReady:       'lib/domReady',
-        text:           'lib/text'
+        text:           'lib/text',
+
+        bootstrap:        'lib/bootstrap.min'
 
     },
 
@@ -27,8 +29,9 @@ require.config({
             {
                 return this._.noConflict();
             }
-        }
+        },
+        "bootstrap" : { "deps" :['jquery'] }
     },
-    deps: ['app/App']
+    deps: ['bootstrap','app/App']
 
 });
