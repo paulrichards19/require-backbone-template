@@ -2,7 +2,7 @@ require.config({
     baseUrl: 'js/',
     paths: {
 
-        almond: 'lib/almond',
+        almond:         'lib/almond',
         jquery:         'lib/jquery-1.11.2.min',
         backbone:       'lib/backbone-min',
         underscore:     'lib/lodash.min',
