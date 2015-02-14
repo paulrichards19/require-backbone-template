@@ -23,13 +23,6 @@ $ git clone [git-repo-url] dillinger
 $ npm install
 ```
 
-### Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantanously see your updates!
-
 License
 ----
 
