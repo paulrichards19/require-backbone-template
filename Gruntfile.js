@@ -19,6 +19,9 @@ module.exports = function(grunt) {
 
         uglify: {
             build: {
+                options: {
+                    sourceMap: true
+                },
                 files: {
                     'build/optimized.min.js': ['build/optimized.js']
                 }
@@ -28,18 +31,18 @@ module.exports = function(grunt) {
         less: {
             build: {
                 options: {
-                    paths: ["public/css"]
+                    paths: ["public/css/less"]
                 },
                 files: {
-                    "build/styles.css": "public/css/styles.less"
+                    "build/lessStyles.css": "public/css/less/styles.less"
                 }
             },
             dev: {
                 options: {
-                    paths: ["public/css"]
+                    paths: ["public/css/less"]
                 },
                 files: {
-                    "public/css/styles.css": "public/css/styles.less"
+                    "public/css/styles.css": "public/css/less/styles.less"
                 }
             }
 
@@ -48,19 +51,19 @@ module.exports = function(grunt) {
         cssmin: {
             build: {
                 options: {
-
+                    sourceMap: true
                 },
-                target: {
-                    files: {
-                        'build/styles.min.css': [ 'public/css/bootstrap.min.css', 'build/styles.css']
-                    }
+
+                files: {
+                    'build/styles.min.css': [ 'public/css/bootstrap.min.css', 'build/lessStyles.css']
                 }
+
             }
         },
 
         watch: {
             dev: {
-                files: ['public/css/*.less'], // which files to watch
+                files: ['public/css/less/*.less'], // which files to watch
                 tasks: ['less:dev'],
                 options: {
                     nospawn: true
