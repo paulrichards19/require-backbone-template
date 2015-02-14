@@ -21,7 +21,8 @@ $ npm install -g grunt
 Git clone the code to your system and install
 
 ```sh
-$ git clone git@github.com:paulrichards19/require-backbone-template.git
+$ git clone https://github.com/paulrichards19/require-backbone-template.git
+$ cd require-backbone-template
 $ npm install
 ```
 
