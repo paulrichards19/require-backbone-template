@@ -12,7 +12,11 @@ module.exports = function(grunt) {
                     mainConfigFile: "public/js/main.js",
                     wrap: true,
                     name: "almond",
-                    out: "build/optimized.js"
+                    out: "build/optimized.js",
+                    findNestedDependencies: true,
+
+
+                    include: ["main"]
                 }
             }
         },
@@ -69,6 +73,10 @@ module.exports = function(grunt) {
                     nospawn: true
                 }
             }
+        },
+
+        copy: {
+            build: {expand: true, src: ['build/**'], dest: 'public/'}
         }
 
 
@@ -79,9 +87,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task(s).
-    grunt.registerTask('default', ['requirejs:build','uglify:build','less:build','cssmin:build']);
+    grunt.registerTask('default', ['requirejs:build','uglify:build','less:build','cssmin:build','copy:build']);
     grunt.registerTask('buildless', ['watch:dev']);
 
 };

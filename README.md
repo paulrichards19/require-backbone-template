@@ -9,7 +9,7 @@ This is a base template that includes the following features already configured 
   - Twitter Bootstrap v3.x
   - jQuery
   - less support
-  - Grunt to complile it into 1 js/css file
+  - Grunt to complile it into 1 js/css file with mapping files
 
 ## Installation
 
@@ -37,10 +37,11 @@ public/js/app can contain all the backbone files. Main.js has the configuration 
 application entry point.
 
 ## Grunt build process
-To build all files in to optimized JavaScript and CSS run
+To build all files in to optimized JavaScript and CSS run:
 ```sh
 $ grunt
 ```
+You can then find all the files in the build folder.
 
 ## Grunt watch to build less file in development
 ```sh
